@@ -17,11 +17,11 @@ docker build -t your-image-name
 
 2. In our scripts, we provide two ways to run it:
 
-1) JupyterLab: 
+1). JupyterLab: 
 
 To run the script, simply execute the <ins>GBert_cora_full_procedure.ipynb</ins> notebook. This script works independently, without requiring any external file support.
 
-2) Python:
+2). Python:
 
 To run a script, 
 
