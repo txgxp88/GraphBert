@@ -50,5 +50,5 @@ python3 main_py.py
 
 
 ----------------------------------------------------------
-### References
+### Paper References from previous work
 Paper URL at arXiv: https://arxiv.org/abs/2001.05140
