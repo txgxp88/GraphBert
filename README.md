@@ -17,11 +17,11 @@ docker build -t your-image-name
 
 2. In our scripts, we provide two ways to run it:
 
-1). JupyterLab: 
+(1). JupyterLab: 
 
 To run the script, simply execute the <ins>GBert_cora_full_procedure.ipynb</ins> notebook. This script works independently, without requiring any external file support.
 
-2). Python:
+(2). Python:
 
 To run a script, 
 
@@ -47,6 +47,11 @@ python3 main_py.py
 ## Performance 
 ![alt text](Images/output.png)
 
+
+----------------------------------------------------------
+### Following work
+Based on this basic version, we have carried out the following work and applied it to Medical MRI imaging applications
+it is located in the another project folder <ins>/GraphBert_MApp</ins>
 
 
 ----------------------------------------------------------
