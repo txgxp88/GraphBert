@@ -13,7 +13,7 @@ In our scripts, we provide two ways to run it:
 
 ## 1) JupyterLab: 
 
-To run the script, simply execute the <span style="color: red;"><ins>GBert_cora_full_procedure.ipynb</ins><span> notebook. This script works independently, without requiring any external file support.
+To run the script, simply execute the <span style="color: red;"><ins>GBert_cora_full_procedure.ipynb</ins></span> notebook. This script works independently, without requiring any external file support.
 
 ## 2) Python:
 
