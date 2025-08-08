@@ -56,4 +56,5 @@ it is located in the another project folder <ins>/GraphBert_MApp</ins>
 
 ----------------------------------------------------------
 ### Paper References from previous work
+Graph-Bert: Only Attention is Needed for Learning Graph Representations
 Paper URL at arXiv: https://arxiv.org/abs/2001.05140
