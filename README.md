@@ -1,5 +1,9 @@
 # The Basic version of Graph-Bert Model
 
+<img width="901" height="452" alt="image" src="https://github.com/user-attachments/assets/cf44ccb4-5595-40bc-bfcc-7cc824c26299" />
+
+Architecture of the GRAPH-BERT Model. (Part 1: linkless subgraph batching; Part 2: node input vector embeddings and graph transformer based encoder; Part 3: representation fusion and functional component depending on the target application task, the function component will generate different output (We also include the residual terms for reviving deep learning)
+
 
 ----------------------------------------------------------
 ## How to run the code?
