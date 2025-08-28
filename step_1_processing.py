@@ -8,8 +8,8 @@ import torch.nn.functional as F
 
 def step_1(dir_path):
 
-    content_path = dir_path.joinpath('data', 'Cora', 'cora.content')
-    cites_path = dir_path.joinpath('data', 'Cora', 'cora.cites')
+    content_path = dir_path.joinpath('Data', 'Cora', 'cora.content')
+    cites_path = dir_path.joinpath('Data', 'Cora', 'cora.cites')
 
     content_df = pd.read_csv(content_path, sep='\t', header=None)
 
