@@ -54,8 +54,9 @@ python3 main_py.py
 
 ----------------------------------------------------------
 ### Following work
+
 Based on this basic version, we have carried out the following work and applied it to Medical MRI imaging applications
-it is located in the another project folder <ins>/GraphBert_MApp</ins>
+it is located in the another project [folder](https://github.com/txgxp88/GraphBert_MApp)
 
 
 ----------------------------------------------------------
