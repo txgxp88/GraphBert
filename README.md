@@ -59,6 +59,43 @@ Based on this basic version, we have carried out the following work and applied 
 it is located in the another project [folder](https://github.com/txgxp88/GraphBert_MApp)
 
 
+### GCP Cloud running
+docker build -t myapp:latest -f Dockerfile_cpu https://github.com/txgxp88/GraphBert.git
+
+PROJECT_ID=$XXXX
+REGION=$XXXX
+REPO=my-repo
+
+# create artifactory for image container
+gcloud artifacts repositories create $my-repo \
+    --repository-format=docker \
+    --location=$us-central1
+
+# Push
+docker tag myapp:latest $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
+docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
+
+# Validate 
+gcloud artifacts docker images list us-central1-docker.pkg.dev/$PROJECT_ID/my-repo
+
+# running
+IMAGE_URI=us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/myapp:latest
+
+gcloud ai custom-jobs create \
+  --region=$REGION \
+  --display-name=graphbert-job \
+  --worker-pool-spec=machine-type=n1-standard-4,replica-count=1,container-image-uri=$IMAGE_URI \
+  --command="python" \
+  --args="main.py"
+
+# check
+gcloud ai custom-jobs stream-logs projects/162077967707/locations/us-central1/customJobs/3709207097687146496
+
+or on the training GUI
+
+
+
+
 ----------------------------------------------------------
 ### Paper References from previous work
 Graph-Bert: Only Attention is Needed for Learning Graph Representations
