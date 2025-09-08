@@ -83,9 +83,9 @@ gcloud ai custom-jobs create \
   --args="main.py"
 
 (5) check
-gcloud ai custom-jobs stream-logs projects/162077967707/locations/us-central1/customJobs/3709207097687146496
+gcloud ai custom-jobs stream-logs projects
 
-or on the training GUI
+or on the training GUI from Vertex AI
 
 
 ----------------------------------------------------------
