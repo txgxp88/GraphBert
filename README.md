@@ -66,19 +66,19 @@ PROJECT_ID=$XXXX
 REGION=$XXXX
 REPO=my-repo
 
-# create artifactory for image container
+(1) create artifactory for image container
 gcloud artifacts repositories create $my-repo \
     --repository-format=docker \
     --location=$us-central1
 
-# Push
+(2) Push
 docker tag myapp:latest $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
 docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
 
-# Validate 
+(3) Validate 
 gcloud artifacts docker images list us-central1-docker.pkg.dev/$PROJECT_ID/my-repo
 
-# running
+(4) running
 IMAGE_URI=us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/myapp:latest
 
 gcloud ai custom-jobs create \
@@ -88,7 +88,7 @@ gcloud ai custom-jobs create \
   --command="python" \
   --args="main.py"
 
-# check
+(5) check
 gcloud ai custom-jobs stream-logs projects/162077967707/locations/us-central1/customJobs/3709207097687146496
 
 or on the training GUI
