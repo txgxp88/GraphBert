@@ -32,28 +32,11 @@ To run a script,
 ```bash
 python3 main_py.py
 
-``` 
+```
 
-----------------------------------------------------------
-## The procedure of our code?
+ (3). GCP Cloud running
 
-(1) Data Fetching and Processing: In this step, we use a simple example Cora dataset to demonstrate the entire pipeline using the script <ins>step_1_processing.py</ins>.
-
-(2) Graph-Bert Model Input preparation: (a) Node WL Code. (b) Intimacy-based Subgraph Batch. (c) Node Hop Distance. These inputs can be computed using the script <ins>script_2_subgraph.py</ins>.
-
-(3) Graph-Bert parameters setting and data preparations: it is handled by <ins>script_3_setting.py</ins> and <ins>step_4_classification.py</ins>.
-
-(4) Pretraining and Fine-tuning tasks for node classification check out our <ins>main_py.py</ins>. This script serves as the entry point for running the model.
-
-
-
-----------------------------------------------------------
-## Performance 
-![alt text](Images/output.png)
-
-
-----------------------------------------------------------
-### GCP Cloud running
+ example
 docker build -t myapp:latest -f Dockerfile_cpu https://github.com/txgxp88/GraphBert.git
 
 PROJECT_ID=$XXXX
@@ -86,6 +69,23 @@ gcloud ai custom-jobs create \
 gcloud ai custom-jobs stream-logs projects
 
 or on the training GUI from Vertex AI
+
+----------------------------------------------------------
+## The procedure of our code?
+
+(1) Data Fetching and Processing: In this step, we use a simple example Cora dataset to demonstrate the entire pipeline using the script <ins>step_1_processing.py</ins>.
+
+(2) Graph-Bert Model Input preparation: (a) Node WL Code. (b) Intimacy-based Subgraph Batch. (c) Node Hop Distance. These inputs can be computed using the script <ins>script_2_subgraph.py</ins>.
+
+(3) Graph-Bert parameters setting and data preparations: it is handled by <ins>script_3_setting.py</ins> and <ins>step_4_classification.py</ins>.
+
+(4) Pretraining and Fine-tuning tasks for node classification check out our <ins>main_py.py</ins>. This script serves as the entry point for running the model.
+
+
+
+----------------------------------------------------------
+## Performance 
+![alt text](Images/output.png)
 
 
 ----------------------------------------------------------
