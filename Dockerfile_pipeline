@@ -23,7 +23,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
         -f https://data.pyg.org/whl/torch-2.4.1+cpu.html && \
     pip install --no-cache-dir \
         google-cloud-storage google-cloud-aiplatform kfp && \
-    pip install --no-cache-dir -r requirements_cpu.txt
+    pip install --no-cache-dir -r requirements_cpu.txt && \
+    pip install gcsfs
 
 
 COPY . .
