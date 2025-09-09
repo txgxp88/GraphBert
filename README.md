@@ -36,26 +36,31 @@ python3 main_py.py
 
  (3). GCP Cloud running
 
- example
+ example:
+ 
 docker build -t myapp:latest -f Dockerfile_cpu https://github.com/txgxp88/GraphBert.git
 
 PROJECT_ID=$XXXX
 REGION=$XXXX
 REPO=my-repo
 
-(1) create artifactory for image container
+(1) create artifactory for image container:
+
 gcloud artifacts repositories create $my-repo \
     --repository-format=docker \
     --location=$us-central1
 
-(2) Push
+(2) Push:
+
 docker tag myapp:latest $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
 docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
 
-(3) Validate 
+(3) Validate:
+
 gcloud artifacts docker images list us-central1-docker.pkg.dev/$PROJECT_ID/my-repo
 
-(4) running
+(4) running:
+
 IMAGE_URI=us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/myapp:latest
 
 gcloud ai custom-jobs create \
@@ -65,7 +70,8 @@ gcloud ai custom-jobs create \
   --command="python" \
   --args="main.py"
 
-(5) check
+(5) check:
+
 gcloud ai custom-jobs stream-logs projects
 
 or on the training GUI from Vertex AI
