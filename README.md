@@ -53,6 +53,7 @@ gcloud artifacts repositories create $my-repo \
 (2) Push:
 
 docker tag myapp:latest $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
+
 docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO/myapp:latest
 
 (3) Validate:
